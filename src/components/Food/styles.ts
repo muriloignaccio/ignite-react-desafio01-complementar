@@ -1,8 +1,16 @@
 import styled, { css } from 'styled-components';
 
-export const Container = styled.div`
+interface ContainerProps {
+  available: boolean
+}
+
+export const Container = styled.div<ContainerProps>`
   background: #f0f0f5;
   border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   header {
     background: #ffb84d;
@@ -21,11 +29,17 @@ export const Container = styled.div`
     img {
       pointer-events: none;
       user-select: none;
+      width: 100%;
     }
   }
 
   section.body {
     padding: 30px;
+
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     h2 {
       color: #3d3d4d;
